@@ -1,0 +1,12 @@
+{{- if not ($.Page.Scratch.Get "musicCount") -}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+{{- end -}}
+{{- $.Page.Scratch.Add "musicCount" 1 -}}
+{{- if not ($.Page.Scratch.Get "metingCount") -}}
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+{{- end -}}
+{{- $.Page.Scratch.Add "metingCount" 1 -}}
+<meting-js
+	auto={{ .Get 0 }}>
+</meting-js>

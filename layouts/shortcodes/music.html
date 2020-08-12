@@ -1,0 +1,19 @@
+{{- if not ($.Page.Scratch.Get "musicCount") -}}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+{{- end -}}
+{{- $.Page.Scratch.Add "musicCount" 1 -}}
+<div id="aplayer{{ $.Page.Scratch.Get "musicCount" }}"></div>
+<script type="text/javascript">
+const ap = new APlayer({
+    container: document.getElementById('aplayer{{ $.Page.Scratch.Get "musicCount" }}'),
+    lrcType: 1,
+    audio: [{
+        url: {{ .Get "url" }},
+        {{ with .Get "name"}} name={{.}},{{ end }}
+        {{ with .Get "artist"}} artist={{.}},{{ end }}
+        {{ with .Get "cover"}} cover={{.}},{{ end }}
+        {{ with .Get "lrc"}} lrc={{.}},{{ end }}
+    }],
+});
+</script>
