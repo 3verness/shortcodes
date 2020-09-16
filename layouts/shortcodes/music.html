@@ -10,10 +10,10 @@ const ap = new APlayer({
     lrcType: 1,
     audio: [{
         url: {{ .Get "url" }},
-        {{ with .Get "name"}} name={{.}},{{ end }}
-        {{ with .Get "artist"}} artist={{.}},{{ end }}
-        {{ with .Get "cover"}} cover={{.}},{{ end }}
-        {{ with .Get "lrc"}} lrc={{.}},{{ end }}
+        {{ with .Get "name"}} name： {{.}},{{ end }}
+        {{ with .Get "artist"}} artist： {{.}},{{ end }}
+        {{ with .Get "cover"}} cover： {{.}},{{ end }}
+        {{ with .Get "lrc"}} lrc： {{.}},{{ end }}
     }],
 });
 </script>
