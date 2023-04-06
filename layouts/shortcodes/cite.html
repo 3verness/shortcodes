@@ -1,0 +1,2 @@
+{{ $id := string (.Get 0) }}{{ $val := (.Page.RenderString (.Get 1) | chomp) }}{{ .Page.Store.SetInMap "footnotes" $id $val }}
+<sup id="fnref:{{ $id }}"><a href="#fn:{{ $id }}" class="footnote-ref" role="doc-noteref">[{{ $id }}]</a></sup>
